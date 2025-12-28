@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a word : ");
+        String input=sc.nextLine();
+        String cleaned=input.toLowerCase().replaceAll("[^a-z0-9]", "");
+        String reversed="";
+        for (int i=cleaned.length()-1;i>=0;i--) {
+            reversed=reversed+cleaned.charAt(i);
+        }
+        if (cleaned.equals(reversed)) {
+            System.out.println("It is a Palindrome.");
+        } else {
+            System.out.println("It is NOT a Palindrome.");
+        }
+        sc.close();
+    }
+}
